@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% comment %} game.html {% endcomment %}
+{% load static %}
+
+{% block content %}
+
+<div class="start-game__from container mt-3">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="text" name="username" class="form-control" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="option" aria-label="Default select example">
+                <option selected>Choose Option</option>
+                <option value="1">Have Room code</option>
+                <option value="2">Create Room code</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Room Code" name="room_code">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
